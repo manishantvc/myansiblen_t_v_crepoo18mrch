@@ -1,0 +1,11 @@
+---
+- hosts:  all
+  tasks:
+    -name: i want to install tree
+    apt:
+     name: tree
+     state: present
+     -name: i want to install weget
+     apt:
+      name: weget
+      state: present 
