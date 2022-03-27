@@ -1,14 +1,15 @@
 ---
- -hosts: mywebserver
- become: yes
- tasks:
- -name: install java on ubuntu ansible nodes
- apt:
- name: "{{my java pack on ubuntu}}"
- state: present
- when: ansible_os_family=="Debion"
+  -hosts: mywebserver
+  become: yes
+  tasks:
+   -name: install java on ubuntu ansible nodes
+   apt:
+  name: "{{my java pack on ubuntu}}"
+  state: present
+  when: ansible_os_family -- "Debian"
+
   -name: install java on redhat ansible nodes
   yum:
-  name: "{{my java pack on redhat}}"
-  state: presemt
+   name: "{{my java pack on redhat}}"
+   state: presemt
    when: ansible_os_family =="Redhat"
