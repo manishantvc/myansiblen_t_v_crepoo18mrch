@@ -1,0 +1,25 @@
+---
+- hosts: 172.31.31.146
+  become: yes
+  tasks:
+- name: i want to execute linux command
+  command: hostname -f
+  register: myresult
+- name: i want to display myfirst task result
+  debug:
+     msg: "{{myresult}}"
+
+
+- name: install git
+  apt:
+    name: git
+    state: present
+  when: myresult.stderr ==""
+
+- name: install tree
+  apt:
+   name: tree
+   state: present
+  when: myResult.stdeer !=""
+  
+           
