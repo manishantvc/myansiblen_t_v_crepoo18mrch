@@ -14,4 +14,4 @@
       state: started
     when: ansible_os_family == "Debian"
 
-  - name: i want to install webserver on ansible RedHat nides 
+  - name: i want to install webserver on ansible RedHat nodes 
